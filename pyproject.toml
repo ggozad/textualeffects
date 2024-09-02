@@ -1,0 +1,23 @@
+[project]
+name = "textualeffects"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "terminaltexteffects>=0.11.0",
+    "textual>=0.79.1",
+    "typer>=0.12.5",
+]
+
+[project.scripts]
+textualeffects = "textualeffects.cli.textualeffects:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "textual-dev>=1.6.1",
+]
