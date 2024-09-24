@@ -1,7 +1,7 @@
 from textual.app import App, ComposeResult
 
 from textualeffects.effects import EffectType
-from textualeffects.widget import EffectLabel
+from textualeffects.widgets import EffectLabel
 
 effect: EffectType = "Spotlights"
 config = {
