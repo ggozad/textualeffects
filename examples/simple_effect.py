@@ -20,4 +20,6 @@ class TextualEffect(App):
         yield label
 
 
-app = TextualEffect()
+if __name__ == "__main__":
+    app = TextualEffect()
+    app.run()
