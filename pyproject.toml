@@ -1,13 +1,32 @@
 [project]
 name = "textualeffects"
-version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
+version = "0.1.1"
+description = "Visual effects for Textual, a TermincalTextEffects wrapper."
+authors = [{ name = "Yiorgis Gozadinos", email = "ggozadinos@gmail.com" }]
+license = { text = "MIT" }
+readme = { file = "README.md", content-type = "text/markdown" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Typing :: Typed",
+]
 requires-python = ">=3.10"
 dependencies = [
     "terminaltexteffects>=0.11.0",
-    "textual>=0.79.1",
 ]
+
+[project.urls]
+Homepage = "https://github.com/ggozad/textualeffects"
+Repository = "https://github.com/ggozad/textualeffects"
+Issues = "https://github.com/ggozad/textualeffects/issues"
 
 [build-system]
 requires = ["hatchling"]
@@ -15,5 +34,31 @@ build-backend = "hatchling.build"
 
 [tool.uv]
 dev-dependencies = [
+    "ruff>=0.6.7",
     "textual-dev>=1.6.1",
 ]
+
+[tool.ruff]
+line-length = 88
+# Enable Flake's "E" and "F" codes by default and "I" for sorting imports.
+lint.select = ["E", "F", "I"]
+lint.ignore = ["E501", "E741"]                               # E741 should not be ignored
+lint.per-file-ignores = { "__init__.py" = ["F401", "F403"] }
+# Allow unused variables when underscore-prefixed.
+lint.dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pypackages__",
+    ".cache",
+    "_build",
+    "build",
+    "dist",
+    "venv",
+]
+
