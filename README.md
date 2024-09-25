@@ -72,11 +72,21 @@ if __name__ == "__main__":
     app.run()
 ```
 
+![EffectLabel](./screenshots/SplashScreen.gif)
+
 Both widgets accept the following arguments:
 - `text`: The text to display.
 - `effect`: The visual effect to apply to the text. Available effects are exposed through the `EffectType` type.
 - `config`: A dictionary of configuration options for the effect. The available options depend on the effect. Detailed information on the available options can be found in the [TerminalTextEffects documentation](https://chrisbuilds.github.io/terminaltexteffects/showroom/).
 
+For convenience, when an effect has run its course, the `EffectLabel` and `SplashScreen` widgets will emit a `EffectLabel.EffectFinished` event.
+You can listen for this event to perform any actions:
+
+```python
+    @on(EffectLabel.EffectFinished)
+    def do_stuff(self, message: EffectLabel.EffectFinished) -> None:
+        ...
+```
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
