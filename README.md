@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
 ![EffectLabel](./screenshots/EffectLabel.gif)
 
-A `SplashScreen` widget that can be used to display a splash screen based on `ModalScreen` with a visual effect. Once the effect is complete, the splash screen will be dismissed.
+A `SplashScreen` widget that can be used to display a splash screen based on `ModalScreen` with a visual effect. Once the effect is complete, the splash screen will be dismissed. The user can also dismiss the splash screen by pressing the <kbd>ESC</kbd> key.
 
 ```python
 from textual.app import App, ComposeResult

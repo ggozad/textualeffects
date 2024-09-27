@@ -77,6 +77,10 @@ class SplashScreen(ModalScreen):
     }
     """
 
+    BINDINGS = [
+        ("escape", "cancel", "Cancel"),
+    ]
+
     def __init__(
         self, text: str, effect: EffectType = "Beams", config: dict[str, Any] = {}
     ) -> None:
@@ -84,6 +88,9 @@ class SplashScreen(ModalScreen):
         self.text = text
         self.effect = effect
         self.config = config
+
+    def action_cancel(self) -> None:
+        self.dismiss()
 
     @on(EffectLabel.EffectFinished)
     def on_effect_finished(self, message: EffectLabel.EffectFinished) -> None:
