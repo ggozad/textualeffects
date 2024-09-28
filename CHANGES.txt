@@ -1,8 +1,11 @@
 Changelog
 =========
 
-0.1.3 -
+0.1.3 - 2024-09-28
 ------------------
+
+- Github Actions publishing to PyPI.
+  [ggozad]
 
 - ESC dismisses the splash screen.
   [ggozad]
