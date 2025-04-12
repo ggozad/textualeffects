@@ -12,7 +12,6 @@ config = {
 
 
 class TextualEffect(App):
-
     def compose(self) -> ComposeResult:
         label = EffectLabel(text, effect=effect, config=config)
         label.styles.border = ("heavy", "green")

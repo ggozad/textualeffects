@@ -15,7 +15,6 @@ from textualeffects.effects import EffectType, effects
 
 
 class EffectLabel(Static):
-
     text: reactive[str] = reactive("")
     height: var[int] = var(0)
     width: var[int] = var(0)
@@ -23,7 +22,6 @@ class EffectLabel(Static):
     config: var[dict[str, Any]] = var({})
 
     class EffectFinished(Message):
-
         def __init__(self, effect: EffectType) -> None:
             self.effect = effect
             super().__init__()
@@ -52,11 +50,7 @@ class EffectLabel(Static):
 
         effect.terminal_config.canvas_width = self.width
         effect.terminal_config.canvas_height = self.height
-        frames = []
         for frame in effect:
-            frames.append(frame)
-
-        for frame in frames:
             self.text = frame
             self.update(Text.from_ansi(self.text))
             await asyncio.sleep(0)

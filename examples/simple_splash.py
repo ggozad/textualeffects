@@ -13,7 +13,6 @@ config = {
 
 
 class SplashEffect(App):
-
     def on_mount(self) -> None:
         self.push_screen(SplashScreen(text, effect=effect, config=config))
 
