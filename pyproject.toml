@@ -19,7 +19,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 requires-python = ">=3.10"
-dependencies = ["terminaltexteffects>=0.12.0"]
+dependencies = ["terminaltexteffects>=0.14.2"]
 
 [project.urls]
 Homepage = "https://github.com/ggozad/textualeffects"
@@ -36,8 +36,8 @@ exclude = ["/screenshots", "/examples"]
 [tool.hatch.build.targets.wheel]
 only-packages = true
 
-[tool.uv]
-dev-dependencies = ["ruff>=0.11.5", "textual-dev>=1.7.0"]
+[dependency-groups]
+dev = ["ruff>=0.11.5", "textual-dev>=1.7.0"]
 
 [tool.ruff]
 line-length = 88
