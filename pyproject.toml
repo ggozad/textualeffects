@@ -1,6 +1,6 @@
 [project]
 name = "textualeffects"
-version = "0.1.4"
+version = "0.2.0"
 description = "Visual effects for Textual, a TermincalTextEffects wrapper."
 authors = [{ name = "Yiorgis Gozadinos", email = "ggozadinos@gmail.com" }]
 license = { text = "MIT" }
