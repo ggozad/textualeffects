@@ -17,7 +17,7 @@ from textual.app import App, ComposeResult
 from textualeffects.effects import EffectType
 from textualeffects.widgets import EffectLabel
 
-text=("Hello World! " * 5 + "\n") * 10,
+text = ("Hello World! " * 5 + "\n") * 10
 effect: EffectType = "Spotlights"
 config = {
     "search_duration": 500,

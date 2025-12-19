@@ -17,6 +17,8 @@ EffectType = Literal[
     "ErrorCorrect",
     "Expand",
     "Fireworks",
+    "Highlight",
+    "LaserEtch",
     "Matrix",
     "MiddleOut",
     "OrbittingVolley",
@@ -29,10 +31,13 @@ EffectType = Literal[
     "Scattered",
     "Slice",
     "Slide",
+    "Smoke",
     "Spotlights",
     "Spray",
     "Swarm",
+    "Sweep",
     "SynthGrid",
+    "Thunderstorm",
     "Unstable",
     "VHSTape",
     "Waves",
@@ -45,7 +50,7 @@ for module_info in pkgutil.iter_modules(
     terminaltexteffects.effects.__path__, terminaltexteffects.effects.__name__ + "."
 ):
     module = importlib.import_module(module_info.name)
-    if hasattr(module, "get_effect_and_args"):
-        effect_class, arg_class = module.get_effect_and_args()
+    if hasattr(module, "get_effect_resources"):
+        _, effect_class, config_class = module.get_effect_resources()
         effects[effect_class.__name__] = effect_class
-        effect_args[effect_class.__name__] = arg_class
+        effect_args[effect_class.__name__] = config_class
